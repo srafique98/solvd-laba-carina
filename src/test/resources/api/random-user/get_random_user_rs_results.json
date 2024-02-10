@@ -1,0 +1,26 @@
+{
+  "results": [
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Dustin",
+        "last": "Watts"
+      },
+      "email": "dustin.watts@example.com",
+      "dob": {
+        "date": "1945-12-30T18:33:45.469Z",
+        "age": 78
+      },
+      "phone": "(524) 839-3318",
+      "cell": "(648) 900-7962",
+      "nat": "US"
+    }
+  ],
+  "info": {
+    "seed": "90a61cc400c227d0",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}

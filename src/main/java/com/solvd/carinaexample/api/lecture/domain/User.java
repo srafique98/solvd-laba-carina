@@ -1,4 +1,4 @@
-package com.solvd.carinaexample.domain;
+package com.solvd.carinaexample.api.lecture.domain;
 
 public class User {
     private String username;

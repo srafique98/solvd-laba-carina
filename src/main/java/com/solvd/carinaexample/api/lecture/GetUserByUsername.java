@@ -1,4 +1,4 @@
-package com.solvd.carinaexample.api;
+package com.solvd.carinaexample.api.lecture;
 
 import com.zebrunner.carina.api.AbstractApiMethodV2;
 import com.zebrunner.carina.api.annotation.Endpoint;
