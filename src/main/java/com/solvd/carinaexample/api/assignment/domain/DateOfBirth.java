@@ -9,6 +9,14 @@ public class DateOfBirth {
     @JsonProperty("age")
     private int age;
 
+    public DateOfBirth() {
+    }
+
+    public DateOfBirth(String date, int age) {
+        this.date = date;
+        this.age = age;
+    }
+
     public String getDate() {
         return date;
     }

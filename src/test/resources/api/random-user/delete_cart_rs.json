@@ -1,0 +1,16 @@
+{
+  "id": "type:Integer",
+  "userId": "type:Integer",
+  "date": "type:String",
+  "products": [
+    {
+      "productId": "type:Integer",
+      "quantity": "type:Integer"
+    },
+    {
+      "productId": "type:Integer",
+      "quantity": "type:Integer"
+    }
+  ],
+  "__v": "type:Integer"
+}

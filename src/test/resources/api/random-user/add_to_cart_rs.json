@@ -1,0 +1,15 @@
+{
+  "id":"type:Integer",
+  "userId":"${cart.userId}",
+  "date":"${cart.date}",
+  "products":[
+    {
+      "productId":"${product.productId}",
+      "quantity":"${product.quantity}"
+    },
+    {
+      "productId":"${product.productId}",
+      "quantity":"${product.quantity}"
+    }
+  ]
+}
