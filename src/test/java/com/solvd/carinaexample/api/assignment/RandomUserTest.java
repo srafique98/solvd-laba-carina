@@ -36,7 +36,7 @@ public class RandomUserTest {
         };
     }
 
-    @Test(dataProvider = "userID")
+    @Test(description = "validate GET request",dataProvider = "userID")
     public void verifyGetRandomUser(String seed) {
         RandomUser randomUser = userApiResponse.getResults().get(0);
         GetRandomUser getRandomUser = new GetRandomUser(seed);
@@ -48,5 +48,8 @@ public class RandomUserTest {
         getRandomUser.callAPI();
         getRandomUser.validateResponse();
     }
+
+    // API does not allow POST, PUT, PATCU, DELETE request
+    // Only allows GET request
 
 }
