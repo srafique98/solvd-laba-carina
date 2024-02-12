@@ -1,10 +1,8 @@
 package com.solvd.carinaexample.api.assignment;
 
-import com.solvd.carinaexample.api.assignment.domain.DateOfBirth;
-import com.solvd.carinaexample.api.assignment.domain.Name;
+
 import com.solvd.carinaexample.api.assignment.domain.UserApiResponse;
 import com.solvd.carinaexample.api.assignment.domain.RandomUser;
-import com.zebrunner.carina.api.apitools.validation.JsonComparatorContext;
 import com.zebrunner.carina.api.http.HttpResponseStatusType;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;

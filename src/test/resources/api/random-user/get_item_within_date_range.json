@@ -1,0 +1,114 @@
+[
+  {
+    "id": "type:Integer",
+    "userId": "type:Integer",
+    "date": "predicate:datePredicate",
+    "products": [
+      {
+        "productId": "type:Integer",
+        "quantity": "type:Integer"
+      },
+      {
+        "productId": "type:Integer",
+        "quantity": "type:Integer"
+      },
+      {
+        "productId": "type:Integer",
+        "quantity": "type:Integer"
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "id": "type:Integer",
+    "userId": "type:Integer",
+    "date": "predicate:datePredicate",
+    "products": [
+      {
+        "productId": "type:Integer",
+        "quantity": "type:Integer"
+      },
+      {
+        "productId": "type:Integer",
+        "quantity": "type:Integer"
+      },
+      {
+        "productId": "type:Integer",
+        "quantity": "type:Integer"
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "id": "type:Integer",
+    "userId": "type:Integer",
+    "date": "predicate:datePredicate",
+    "products": [
+      {
+        "productId": "type:Integer",
+        "quantity": "type:Integer"
+      },
+      {
+        "productId": "type:Integer",
+        "quantity": "type:Integer"
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "id": "type:Integer",
+    "userId": "type:Integer",
+    "date": "predicate:datePredicate",
+    "products": [
+      {
+        "productId": "type:Integer",
+        "quantity": "type:Integer"
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "id": "type:Integer",
+    "userId": "type:Integer",
+    "date": "predicate:datePredicate",
+    "products": [
+      {
+        "productId": "type:Integer",
+        "quantity": "type:Integer"
+      },
+      {
+        "productId": "type:Integer",
+        "quantity": "type:Integer"
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "id": "type:Integer",
+    "userId": "type:Integer",
+    "date": "predicate:datePredicate",
+    "products": [
+      {
+        "productId": "type:Integer",
+        "quantity": "type:Integer"
+      },
+      {
+        "productId": "type:Integer",
+        "quantity": "type:Integer"
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "id": "type:Integer",
+    "userId": "type:Integer",
+    "date": "predicate:datePredicate",
+    "products": [
+      {
+        "productId": "type:Integer",
+        "quantity": "type:Integer"
+      }
+    ],
+    "__v": 0
+  }
+]

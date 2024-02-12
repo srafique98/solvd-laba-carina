@@ -1,4 +1,4 @@
-package com.solvd.carinaexample;
+package com.solvd.carinaexample.web;
 
 import com.solvd.carinaexample.web.HomePage;
 import com.solvd.carinaexample.web.components.SearchLineComponent;
