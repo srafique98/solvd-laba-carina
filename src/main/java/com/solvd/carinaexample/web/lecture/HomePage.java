@@ -1,10 +1,9 @@
-package com.solvd.carinaexample.web;
+package com.solvd.carinaexample.web.lecture;
 
-import com.solvd.carinaexample.web.components.Header;
+import com.solvd.carinaexample.web.lecture.components.Header;
 import com.zebrunner.carina.utils.config.Configuration;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends AbstractPage {

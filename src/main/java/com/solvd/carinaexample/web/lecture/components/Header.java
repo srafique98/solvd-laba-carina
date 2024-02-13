@@ -1,4 +1,4 @@
-package com.solvd.carinaexample.web.components;
+package com.solvd.carinaexample.web.lecture.components;
 
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
 import org.openqa.selenium.SearchContext;

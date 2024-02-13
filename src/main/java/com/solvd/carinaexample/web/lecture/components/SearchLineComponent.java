@@ -1,5 +1,6 @@
-package com.solvd.carinaexample.web.components;
+package com.solvd.carinaexample.web.lecture.components;
 
+import com.solvd.carinaexample.web.lecture.SearchPage;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
 import org.openqa.selenium.SearchContext;
@@ -13,7 +14,8 @@ public class SearchLineComponent extends AbstractUIObject {
     // "//header//*[@id='nav-search']//*[@id='searchDropdownBox']"
     // need . at beginning cuz telling xpath to find element starting from currect content not from root of html tree
     // Header class has . as well but not HomePage cuz we starting from root in HomePage class
-    @FindBy(xpath = ".//*[@id='searchDropdownBox']")
+//    @FindBy(xpath = ".//*[@id='searchDropdownBox']")
+    @FindBy(xpath = ".//*[@id='nav-search-dropdown-card']")
     private ExtendedWebElement productTypeSelect;
     @FindBy(xpath = ".//input[@id='twotabsearchtextbox']")
     private  ExtendedWebElement searchInput;
@@ -32,6 +34,10 @@ public class SearchLineComponent extends AbstractUIObject {
         return searchInput;
     }
 
+    public String getSearchInputPlaceholder(){
+        return searchInput.getAttribute("placeholder");
+    }
+
     public void typeSearchInputValue(String value){
         searchInput.type(value);
     }
@@ -40,7 +46,8 @@ public class SearchLineComponent extends AbstractUIObject {
         return searchButton;
     }
 
-    public void clickSearchButton(){
+    public SearchPage clickSearchButton(){
         searchButton.click();
+        return new SearchPage(getDriver()); // getDriver() is from extends AbstractUIObject
     }
 }
