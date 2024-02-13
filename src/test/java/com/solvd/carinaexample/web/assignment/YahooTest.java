@@ -9,9 +9,9 @@ import org.testng.asserts.SoftAssert;
 
 public class YahooTest extends AbstractTest {
     @Test
-    public void verifyCityWeather(){
+    public void testCityWeather(){
         String myCity = "Lodi";
-        SoftAssert sa = new SoftAssert();
+        String cityIdentifier = "12797649";
         WebDriver driver = getDriver();
         YahooHomePage homePage = new YahooHomePage(driver);
         homePage.open();
@@ -22,9 +22,7 @@ public class YahooTest extends AbstractTest {
         Assert.assertEquals(homeCity.toLowerCase(), myCity.toLowerCase());
 
         YahooWeatherPage weatherPage = homePage.clickSeeMore();
-        Assert.assertTrue(weatherPage.isPageOpened(), " Weather page is not open");
-
-//        Assert.assertEquals(myCity,weatherPage.readCity(),"Not my city!");
-
+        Assert.assertTrue(weatherPage.getCurrentUrl().contains(cityIdentifier),"URL does not contain ID");
+        Assert.assertEquals(weatherPage.readCity(), myCity,"Not my city!");
     }
 }

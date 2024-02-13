@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 public class YahooWeatherPage extends AbstractPage {
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//div[@id='module-location-heading']//h1")
     private ExtendedWebElement city;
     public YahooWeatherPage(WebDriver driver) {
         super(driver);
