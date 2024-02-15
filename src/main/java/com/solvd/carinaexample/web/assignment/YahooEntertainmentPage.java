@@ -11,13 +11,13 @@ import org.openqa.selenium.support.FindBy;
 
 public class YahooEntertainmentPage extends YahooEntertainmentPageBase {
 
-    @FindBy(xpath = ".//div[@id=\"module-horoscope\"]/div")
+    @FindBy(xpath = "//div[@id=\"module-horoscope\"]/div")
     private HoroscopeMenu horoscopeMenu;
 
     @FindBy(xpath = "//div[@class='_yb_tlypg']//span[@class='_yb_g8kr9']")
     public ExtendedWebElement moreButton;
 
-    @FindBy(xpath = ".//div[@id=\"ybar-inner-wrap\"]/div[1]")
+    @FindBy(xpath = "//div[@id=\"ybar-inner-wrap\"]/div[1]")
     private HeaderMenu headerMenu;
 
     public YahooEntertainmentPage(WebDriver driver) {

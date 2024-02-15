@@ -1,8 +1,5 @@
 package com.solvd.carinaexample.web.assignment;
 
-import com.solvd.carinaexample.web.assignment.base.YahooHomePageBase;
-import com.solvd.carinaexample.web.assignment.base.YahooProductServicePageBase;
-import com.solvd.carinaexample.web.lecture.HomePage;
 import com.zebrunner.carina.core.AbstractTest;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -10,7 +7,6 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import java.sql.SQLOutput;
 import java.util.regex.Pattern;
 
 import static org.testng.Assert.assertEquals;
@@ -28,11 +24,7 @@ public class YahooTest extends AbstractTest {
         Assert.assertEquals(homePage.getTitle(), "Yahoo | Mail, Weather, Search, Politics, News, Finance, Sports & Videos", "Homepage title do not match");
 
         String homeCity = homePage.getWeatherCity();
-//        Assert.assertEquals(homeCity.toLowerCase(), myCity.toLowerCase());
-
         YahooWeatherPage weatherPage = homePage.clickSeeMore();
-//        Assert.assertTrue(weatherPage.getCurrentUrl().contains(cityIdentifier),"URL does not contain ID");
-//        Assert.assertEquals(weatherPage.readCity(), myCity,"Not my city!");
         Assert.assertTrue(pattern.matcher(weatherPage.getCurrentUrl()).find(), "URL does not end with a valid city ID");
     }
 
@@ -118,7 +110,21 @@ public class YahooTest extends AbstractTest {
 
     @Test
     public void testCryptoInfo(){
+        WebDriver driver = getDriver();
+        YahooHomePage homePage = new YahooHomePage(driver);
+        homePage.open();
+        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened!");
+//        homePage.search("DOGE-USD");
+//        Assert.assertEquals(homePage.getCrypto(),"Dogecoin USD", "Crypto name not same!");
 
+        YahooFinancePage financePage = homePage.clickFinance();
+        Assert.assertTrue(financePage.getCurrentUrl().contains("finance"), "Finance page not opened!");
+        YahooCryptoPage cryptoPage = financePage.search("DOGE-USD");
+        Assert.assertEquals(cryptoPage.readName(), "Dogecoin USD (DOGE-USD)", "Crypto name is wrong!");
+
+        // Cannot go onto crypto page with automation!!
+//        YahooCryptoPage cryptoPage = financePage.clickCrypto();
+//        Assert.assertTrue(cryptoPage.getCurrentUrl().contains("crypto"), "Crypto page not opened!");
     }
 
 }

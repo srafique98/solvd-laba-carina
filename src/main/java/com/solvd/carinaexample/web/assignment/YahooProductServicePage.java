@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class YahooProductServicePage extends YahooProductServicePageBase {
 
-    @FindBy(xpath = ".//div[@id=\"Col1-0-Everything-Proxy\"]/div/div[2]/a")
+    @FindBy(xpath = "//div[@id=\"Col1-0-Everything-Proxy\"]/div/div[2]/a")
     private ExtendedWebElement chooseCountryLink;
     public YahooProductServicePage(WebDriver driver) {
         super(driver);

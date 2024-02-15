@@ -11,13 +11,13 @@ import org.openqa.selenium.support.FindBy;
 
 public class YahooHomePage extends YahooHomePageBase {
 
-    @FindBy(xpath = ".//div[@id='module-weather']//h4")
+    @FindBy(xpath = "//div[@id='module-weather']//h4")
     private ExtendedWebElement weatherCity;
 
     @FindBy(xpath = "//div[@class='weather-card-content Pos(r)']/a")
     private ExtendedWebElement seeMoreWeatherButton;
 
-    @FindBy(xpath = ".//div[@id='ybar-search-box-container']//input[@type='text']")
+    @FindBy(xpath = "//div[@id='ybar-search-box-container']//input[@type='text']")
     private ExtendedWebElement searchBar;
 
     @FindBy(xpath = "//div[@id='ybar-search-box-container']//button[@type='submit']")
@@ -28,6 +28,13 @@ public class YahooHomePage extends YahooHomePageBase {
 
     @FindBy(xpath = "//div[@class='_yb_tlypg']//span[@class='_yb_g8kr9']")
     public ExtendedWebElement moreButton;
+
+//    @FindBy(xpath = "//div[@class='_yb_tlypg']//a[contains(@data-ylk,'finance')]")
+    @FindBy(xpath = "//div[@class='_yb_tlypg']//a[contains(@data-ylk,'Finance') and @aria-current]")
+    private ExtendedWebElement financeLink;
+
+    @FindBy(xpath = "//div[contains(@class,'kgBrowse')]//h4/span")
+    private ExtendedWebElement crypto;
 
     public YahooHomePage(WebDriver driver) {
         super(driver);
@@ -65,5 +72,16 @@ public class YahooHomePage extends YahooHomePageBase {
         moreButton.click();
         entertainmentLink.click();
         return new YahooEntertainmentPage(getDriver());
+    }
+
+    @Override
+    public YahooFinancePage clickFinance() {
+        moreButton.click();
+        financeLink.click();
+        return new YahooFinancePage(getDriver());
+    }
+
+    public String getCrypto(){
+        return crypto.getText();
     }
 }

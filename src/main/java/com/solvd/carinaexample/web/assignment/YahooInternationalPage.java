@@ -9,7 +9,7 @@ import java.util.List;
 
 public class YahooInternationalPage extends YahooInternationalPageBase {
 
-    @FindBy(xpath = ".//div[@id=\"Col1-0-World-Proxy\"]//a")
+    @FindBy(xpath = "//div[@id=\"Col1-0-World-Proxy\"]//a")
     private List<ExtendedWebElement> countries;
 
     public YahooInternationalPage(WebDriver driver) {

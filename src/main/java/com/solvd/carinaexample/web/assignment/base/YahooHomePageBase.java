@@ -1,5 +1,6 @@
 package com.solvd.carinaexample.web.assignment.base;
 
+import com.solvd.carinaexample.web.assignment.YahooFinancePage;
 import com.solvd.carinaexample.web.assignment.YahooWeatherPage;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
@@ -19,5 +20,5 @@ public abstract class YahooHomePageBase extends AbstractPage {
 
     public abstract YahooEntertainmentPageBase clickEntertainment();
 
-//    public abstract void clickFinance();
+    public abstract YahooFinancePage clickFinance();
 }

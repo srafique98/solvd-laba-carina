@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class YahooLifePage extends YahooLifePageBase {
 
-    @FindBy(xpath = ".//div[@id=\"module-horoscope\"]/div")
+    @FindBy(xpath = "//div[@id=\"module-horoscope\"]/div")
     private HoroscopeMenu horoscopeMenu;
     public YahooLifePage(WebDriver driver) {
         super(driver);
