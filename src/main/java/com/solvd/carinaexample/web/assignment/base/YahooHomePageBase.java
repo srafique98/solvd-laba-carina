@@ -19,7 +19,5 @@ public abstract class YahooHomePageBase extends AbstractPage {
 
     public abstract YahooEntertainmentPageBase clickEntertainment();
 
-//    public abstract void clickProductService();
-//
 //    public abstract void clickFinance();
 }

@@ -2,6 +2,7 @@ package com.solvd.carinaexample.web.assignment;
 
 import com.solvd.carinaexample.web.assignment.base.YahooEntertainmentPageBase;
 import com.solvd.carinaexample.web.assignment.base.YahooHomePageBase;
+import com.solvd.carinaexample.web.assignment.base.YahooProductServicePageBase;
 import com.zebrunner.carina.utils.config.Configuration;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;

@@ -8,4 +8,6 @@ public abstract class YahooEntertainmentPageBase extends AbstractPage {
         super(driver);
     }
     public abstract HoroscopeMenuBase getHoroscopeMenu();
+
+    public abstract HeaderMenuBase getHeaderMenu();
 }
