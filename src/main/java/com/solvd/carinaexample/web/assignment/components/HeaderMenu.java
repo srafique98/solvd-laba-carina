@@ -19,11 +19,6 @@ public class HeaderMenu extends HeaderMenuBase {
         super(driver, searchContext);
     }
 
-//    @Override
-//    public YahooEntertainmentPage openEntertainmentPage() {
-//        return null;
-//    }
-//
     @Override
     public YahooLifePage openLifePage() {
         moreButton.click();

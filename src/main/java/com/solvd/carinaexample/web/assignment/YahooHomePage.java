@@ -29,12 +29,8 @@ public class YahooHomePage extends YahooHomePageBase {
     @FindBy(xpath = "//div[@class='_yb_tlypg']//span[@class='_yb_g8kr9']")
     public ExtendedWebElement moreButton;
 
-//    @FindBy(xpath = "//div[@class='_yb_tlypg']//a[contains(@data-ylk,'finance')]")
     @FindBy(xpath = "//div[@class='_yb_tlypg']//a[contains(@data-ylk,'Finance') and @aria-current]")
     private ExtendedWebElement financeLink;
-
-    @FindBy(xpath = "//div[contains(@class,'kgBrowse')]//h4/span")
-    private ExtendedWebElement crypto;
 
     public YahooHomePage(WebDriver driver) {
         super(driver);
@@ -79,9 +75,5 @@ public class YahooHomePage extends YahooHomePageBase {
         moreButton.click();
         financeLink.click();
         return new YahooFinancePage(getDriver());
-    }
-
-    public String getCrypto(){
-        return crypto.getText();
     }
 }

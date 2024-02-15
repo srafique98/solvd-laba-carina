@@ -62,10 +62,8 @@ public class YahooTest extends AbstractTest {
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened!");
 
         YahooEntertainmentPage entertainmentPage = homePage.clickEntertainment();
-//        System.out.println("pageee -- " + entertainmentPage.getCurrentUrl());
         Assert.assertTrue(entertainmentPage.getCurrentUrl().contains("entertainment"), "Entertainment page is not opened!");
         String dailyHoroscope = entertainmentPage.getHoroscopeMenu().readSelectedHoroscope();
-//        System.out.println("Daily --- " + dailyHoroscope);
         YahooLifePage lifePage = entertainmentPage.getHeaderMenu().openLifePage();
         Assert.assertTrue(lifePage.getCurrentUrl().contains("lifestyle"), "Life page is not opened!");
 
@@ -114,17 +112,11 @@ public class YahooTest extends AbstractTest {
         YahooHomePage homePage = new YahooHomePage(driver);
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened!");
-//        homePage.search("DOGE-USD");
-//        Assert.assertEquals(homePage.getCrypto(),"Dogecoin USD", "Crypto name not same!");
 
         YahooFinancePage financePage = homePage.clickFinance();
         Assert.assertTrue(financePage.getCurrentUrl().contains("finance"), "Finance page not opened!");
         YahooCryptoPage cryptoPage = financePage.search("DOGE-USD");
         Assert.assertEquals(cryptoPage.readName(), "Dogecoin USD (DOGE-USD)", "Crypto name is wrong!");
-
-        // Cannot go onto crypto page with automation!!
-//        YahooCryptoPage cryptoPage = financePage.clickCrypto();
-//        Assert.assertTrue(cryptoPage.getCurrentUrl().contains("crypto"), "Crypto page not opened!");
     }
 
 }

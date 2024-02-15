@@ -2,7 +2,6 @@ package com.solvd.carinaexample.web.assignment;
 
 import com.solvd.carinaexample.web.assignment.base.YahooCountryHomePageBase;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
-import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 

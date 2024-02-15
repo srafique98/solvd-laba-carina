@@ -18,10 +18,6 @@ public class YahooFinancePage extends YahooFinancePageBase {
     @FindBy(xpath = "//div[@id='data-util-col']//section[@class='Mb(20px)' and @data-yaft-module='tdv2-applet-crypto_currencies']//a[contains(@class,'C($secondaryColor)')]")
     private ExtendedWebElement cryptoLink;
 
-//    div[contains(@class, 'Lh(itemHeight)')]
-//    @FindBy(xpath = "//div[contains(@class,'nr-applet-moreNav')]")
-//    private ExtendedWebElement dropDown;
-
     @FindBy(xpath = "//div[@id='ybar-search-box-container']//input[1]")
     private ExtendedWebElement searchBar;
 
