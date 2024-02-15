@@ -11,6 +11,10 @@ public class YahooEntertainmentPage extends YahooEntertainmentPageBase {
 
     @FindBy(xpath = ".//div[@id=\"module-horoscope\"]/div")
     private HoroscopeMenu horoscopeMenu;
+
+    @FindBy(xpath = "//div[@class='_yb_tlypg']//span[@class='_yb_g8kr9']")
+    public ExtendedWebElement moreButton;
+
     public YahooEntertainmentPage(WebDriver driver) {
         super(driver);
     }

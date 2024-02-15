@@ -73,6 +73,7 @@ public class YahooTest extends AbstractTest {
         System.out.println("dailyyyyyy --- " + dailyHoroscope);
 
 
+
     }
 
 
