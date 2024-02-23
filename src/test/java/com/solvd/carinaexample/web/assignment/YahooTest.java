@@ -1,5 +1,9 @@
 package com.solvd.carinaexample.web.assignment;
 
+import com.solvd.carinaexample.web.assignment.base.YahooFinancePageBase;
+import com.solvd.carinaexample.web.assignment.base.YahooHomePageBase;
+import com.solvd.carinaexample.web.assignment.base.YahooProductServicePageBase;
+import com.solvd.carinaexample.web.lecture.HomePage;
 import com.zebrunner.carina.core.AbstractTest;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -36,19 +40,19 @@ public class YahooTest extends AbstractTest {
                 {"Sound of Freedom", "Release date: July 4, 2023", "Alejandro Gómez Monteverde", "https://search.yahoo.com/search?p=sound+of+freedom+movie&fr=yfp-t&fr2=p%3Afp%2Cm%3Asb&ei=UTF-8&fp=1"}
         };
     }
-    @Test()
-    public void testMovieSearch(){
+    @Test(dataProvider = "movies")
+    public void testMovieSearch(String movieTitle,String dateReleased, String director, String url){
         WebDriver driver = getDriver();
         YahooHomePage homePage = new YahooHomePage(driver);
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened!");
 
-        YahooMovieSearchPage moviePage = homePage.searchMovie(Movie.OPPENHEIMER.getTitle(), Movie.OPPENHEIMER.getUrl());
+        YahooMovieSearchPage moviePage = homePage.searchMovie(movieTitle, url);
 
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(moviePage.readTitle(), Movie.OPPENHEIMER.getTitle(), "Invalid title!");
-        softAssert.assertEquals(moviePage.readReleaseDate(), Movie.OPPENHEIMER.getReleaseDate(), "Invalid release date!");
-        softAssert.assertEquals(moviePage.readDirector(), Movie.OPPENHEIMER.getDirector(), "Invalid director!");
+        softAssert.assertEquals(moviePage.readTitle(), movieTitle, "Invalid title!");
+        softAssert.assertEquals(moviePage.readReleaseDate(), dateReleased, "Invalid release date!");
+        softAssert.assertEquals(moviePage.readDirector(), director, "Invalid director!");
         softAssert.assertAll();
         moviePage.goHome();
 
@@ -62,8 +66,10 @@ public class YahooTest extends AbstractTest {
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened!");
 
         YahooEntertainmentPage entertainmentPage = homePage.clickEntertainment();
+//        System.out.println("pageee -- " + entertainmentPage.getCurrentUrl());
         Assert.assertTrue(entertainmentPage.getCurrentUrl().contains("entertainment"), "Entertainment page is not opened!");
         String dailyHoroscope = entertainmentPage.getHoroscopeMenu().readSelectedHoroscope();
+//        System.out.println("Daily --- " + dailyHoroscope);
         YahooLifePage lifePage = entertainmentPage.getHeaderMenu().openLifePage();
         Assert.assertTrue(lifePage.getCurrentUrl().contains("lifestyle"), "Life page is not opened!");
 
@@ -112,11 +118,17 @@ public class YahooTest extends AbstractTest {
         YahooHomePage homePage = new YahooHomePage(driver);
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened!");
+//        homePage.search("DOGE-USD");
+//        Assert.assertEquals(homePage.getCrypto(),"Dogecoin USD", "Crypto name not same!");
 
         YahooFinancePage financePage = homePage.clickFinance();
         Assert.assertTrue(financePage.getCurrentUrl().contains("finance"), "Finance page not opened!");
         YahooCryptoPage cryptoPage = financePage.search("DOGE-USD");
         Assert.assertEquals(cryptoPage.readName(), "Dogecoin USD (DOGE-USD)", "Crypto name is wrong!");
+
+        // Cannot go onto crypto page with automation!!
+//        YahooCryptoPage cryptoPage = financePage.clickCrypto();
+//        Assert.assertTrue(cryptoPage.getCurrentUrl().contains("crypto"), "Crypto page not opened!");
     }
 
 }

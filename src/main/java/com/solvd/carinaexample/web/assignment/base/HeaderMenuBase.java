@@ -11,5 +11,7 @@ public abstract class HeaderMenuBase extends AbstractUIObject {
         super(driver, searchContext);
     }
 
+//    public abstract YahooEntertainmentPage openEntertainmentPage();
+//
     public abstract YahooLifePage openLifePage();
 }

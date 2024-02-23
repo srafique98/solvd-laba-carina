@@ -18,13 +18,22 @@ public class YahooInternationalPage extends YahooInternationalPageBase {
 
     @Override
     public YahooCountryHomePage selectCountry(String name) {
-        for (ExtendedWebElement country : countries) {
-            if (country.getText().equals(name)) {
-                country.scrollTo();
-                country.click();
-                return new YahooCountryHomePage(driver);
-            }
-        }
-        return null;
+        return countries.stream()
+                .filter(country -> country.getText().equals(name))
+                .findFirst()
+                .map(country -> {
+                    country.scrollTo();
+                    country.click();
+                    return new YahooCountryHomePage(driver);
+                })
+                .orElse(null);
+//        for (ExtendedWebElement country : countries) {
+//            if (country.getText().equals(name)) {
+//                country.scrollTo();
+//                country.click();
+//                return new YahooCountryHomePage(driver);
+//            }
+//        }
+//        return null;
     }
 }

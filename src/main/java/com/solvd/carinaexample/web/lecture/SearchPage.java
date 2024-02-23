@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class SearchPage extends AbstractPage {
+public class SearchPage extends AbstractPage { //iphone page then i c!!
 
     // all iphones.. all products can be found using this //*[contains(@class, 's-card-container')].. could have used puis-card-container
     @FindBy(xpath = "//*[contains(@class, 's-card-container')]")
